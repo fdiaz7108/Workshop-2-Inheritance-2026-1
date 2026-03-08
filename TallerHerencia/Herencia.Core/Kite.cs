@@ -21,3 +21,24 @@ namespace Geometry
 			B = b;
 		}
 
+		public override double GetArea()
+		{
+			return (D1 * D2) / 2;
+		}
+
+		public override double GetPerimeter()
+		{
+			return 2 * (A + B);
+		}
+
+		private void ValidateB(double b)
+		{
+			if (b <= 0)
+				throw new ArgumentException("El lado B de la cometa debe ser mayor que cero.");
+			if (double.IsNaN(b) || double.IsInfinity(b))
+				throw new ArgumentException("El lado B de la cometa debe ser un número válido.");
+		}
+
+
+	}
+}
