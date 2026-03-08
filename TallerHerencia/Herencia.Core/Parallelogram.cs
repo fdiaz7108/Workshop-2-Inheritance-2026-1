@@ -23,3 +23,16 @@ namespace Geometry
         {
             return B * H;
         }
+        public override double GetPerimeter()
+        {
+            return 2 * (A + B);
+        }
+
+        private void ValidateH(double h)
+        {
+            if (h <= 0)
+                throw new ArgumentException("La altura del paralelogramo debe ser mayor que cero.");
+            if (double.IsNaN(h) || double.IsInfinity(h))
+                throw new ArgumentException("La altura del paralelogramo debe ser un número válido.");
+        }
+    }
