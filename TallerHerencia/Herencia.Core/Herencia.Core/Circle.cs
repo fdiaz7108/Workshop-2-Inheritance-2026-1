@@ -36,3 +36,20 @@
         {
             return 2 * Math.PI * R;
         }
+
+
+        // METODO
+        private void ValidateR(double r)
+        {
+            if (r <= 0)
+            {
+                throw new ArgumentException("El radio debe ser mayor que cero.");
+            }
+
+            if (double.IsNaN(r) || double.IsInfinity(r))
+            {
+                throw new ArgumentException("El radio debe ser un número válido.");
+            }
+        }
+    }
+}
